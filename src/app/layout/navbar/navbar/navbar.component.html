@@ -84,13 +84,7 @@
               <a class="block py-2 px-3 rounded-full" routerLink="register" routerLinkActive="bg-green-400 text-white">Register</a>
             </li>
           }
-         @if (loged == true) {
-
-          
-          <!-- <li>
-            <a class="block py-2 px-3 rounded-full" routerLink="changePassword" routerLinkActive="bg-green-400 text-white">Change Password</a>
-          </li> -->
-         }
+         
           @if (loged == true) {
             <li>
               <a (click)="logOut()" class="block py-2 px-3 rounded-full cursor-pointer">Log out </a>
