@@ -27,6 +27,9 @@ export class CheckoutComponent implements OnInit{
         this.cartId = params.get('c_id')!;
         console.log(this.cartId);
         
+      },
+      error: (err) => {
+        console.log(err);
       }
     })
   }

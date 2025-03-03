@@ -88,7 +88,6 @@ export class LoginComponent {
 
   ForgetUserPassword() {
     console.log(this.useremail);
-
     this._AuthService.ForgotPassword(this.useremail).subscribe({
       next: (res) => {
         console.log(res);
@@ -102,7 +101,7 @@ export class LoginComponent {
       },
       error: (err) => {
         console.log(err);
-        this.toastr.error('Failed to add product to cart!')
+        this.toastr.error(err.error.message)
 
       }
     })
