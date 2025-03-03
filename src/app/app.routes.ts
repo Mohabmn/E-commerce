@@ -17,16 +17,10 @@ export const routes: Routes = [
         {path:'allorders' , loadComponent:()=>import('./pages/allorders/allorders/allorders.component').then((classes)=>classes.AllordersComponent) , title: 'allorders'},
         {path:'wishlist' , loadComponent:()=>import('./pages/wishlist/wishlist/wishlist.component').then((classes)=>classes.WishlistComponent) , title: 'wishlist'},
         {path:'userProfile' , loadComponent:()=>import('./pages/userprofile/userprofile/userprofile.component').then((classes)=>classes.UserprofileComponent) , title: 'User-Profile'},
-        {path:'checkout/:c_id' , loadComponent:()=>import('./pages/checkout/checkout/checkout.component').then((classes)=>classes.CheckoutComponent) , title: 'Checkout' ,  data: {
-            prerender: true,
-            getPrerenderParams: () => [{ c_id: '123' }] // ضع قيم افتراضية هنا
-          }},
+        {path:'checkout/:c_id' , loadComponent:()=>import('./pages/checkout/checkout/checkout.component').then((classes)=>classes.CheckoutComponent) , title: 'Checkout'},
         {path:'changePassword' , loadComponent:()=>import('./pages/changePassword/change-password/change-password.component').then((classes)=>classes.ChangePasswordComponent) , title: 'change-password'},
         {path:'changeData' , loadComponent:()=>import('./pages/changeData/change-data/change-data.component').then((classes)=>classes.ChangeDataComponent) , title: 'change-Data'},
-        {path:'product-details/:p-id', loadComponent:()=>import('./pages/productDetails/productdetails/productdetails.component').then((classes)=>classes.ProductdetailsComponent) , title:'product-details' ,  data: {
-            prerender: true,
-            getPrerenderParams: () => [{ p_id: '456' }]
-          }}
+        {path:'product-details/:p-id', loadComponent:()=>import('./pages/productDetails/productdetails/productdetails.component').then((classes)=>classes.ProductdetailsComponent) , title:'product-details'}
     ]},
     
     {path:'' , component:AuthComponent , children:[
