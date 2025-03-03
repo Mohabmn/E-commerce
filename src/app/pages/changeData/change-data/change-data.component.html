@@ -1,0 +1,114 @@
+<section class="w-2/3 mx-auto bg-slate-200 my-8 p-5 rounded-lg relative">
+    <form [formGroup]="changeDataForm" (ngSubmit)="updateUserData()">
+        <h1 class="text-emerald-500  font-bold text-2xl">Update Data</h1>
+
+        <div class="my-5">
+            <label for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+            <input formControlName="name" type="text" id="name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                [class]="{
+                    'valid' : !changeDataForm.get('name')?.errors && changeDataForm.get('name')?.touched,
+                    'invalid' : changeDataForm.get('name')?.errors && changeDataForm.get('name')?.touched
+               
+                }">
+    
+            @if (changeDataForm.get('name')?.errors && changeDataForm.get('name')?.touched) {
+            <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                role="alert">
+                <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span class="sr-only">Danger</span>
+                <div>
+    
+                    <ul class="mt-1.5 list-disc list-inside">
+                        @if(changeDataForm.get('name')?.getError('required')){<li>Name is required</li>}
+                        @if (changeDataForm.get('name')?.getError('minlength')) {<li>Minimum number of charecters is (3)</li>}
+                        @if (changeDataForm.get('name')?.getError('maxlength')) {<li>Maximum number of charecters is (10)</li>
+                        }
+                    </ul>
+                </div>
+    
+            </div>
+            }
+    
+        </div>
+
+        <div class="my-5">
+            <label for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <input formControlName="email" type="text" id="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                [class]="{
+                    'valid' : !changeDataForm.get('email')?.errors && changeDataForm.get('email')?.touched,
+                    'invalid' : changeDataForm.get('email')?.errors && changeDataForm.get('email')?.touched
+               
+                }">
+    
+            @if (changeDataForm.get('email')?.errors && changeDataForm.get('email')?.touched) {
+            <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                role="alert">
+                <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span class="sr-only">Danger</span>
+                <div>
+    
+                    <ul class="mt-1.5 list-disc list-inside">
+                        @if(changeDataForm.get('email')?.getError('required')){<li>Email is required</li>}
+                        @if (changeDataForm.get('email')?.getError('email')) {<li>Email format is wrong</li>}
+                      
+                    </ul>
+                </div>
+    
+            </div>
+            }
+    
+        </div>
+
+        <div class="my-5">
+            <label for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
+            <input formControlName="phone" type="text" id="phone"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                [class]="{
+                    'valid' : !changeDataForm.get('phone')?.errors && changeDataForm.get('phone')?.touched,
+                    'invalid' : changeDataForm.get('phone')?.errors && changeDataForm.get('phone')?.touched
+               
+                }">
+    
+            @if (changeDataForm.get('phone')?.errors && changeDataForm.get('phone')?.touched) {
+            <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                role="alert">
+                <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span class="sr-only">Danger</span>
+                <div>
+    
+                    <ul class="mt-1.5 list-disc list-inside">
+                        @if(changeDataForm.get('phone')?.getError('required')){<li>phone is required</li>}
+                        @if (changeDataForm.get('phone')?.getError('pattern')) {<li>phone format is wrong</li>}
+                      
+                    </ul>
+                </div>
+    
+            </div>
+            }
+    
+        </div>
+
+        <button class="w-full bg-emerald-500 p-3 rounded-xl text-white hover:bg-emerald-600 transition-all duration-500 text-center">
+            submit @if (loading != false) {<span><i class="fa-solid fa-circle-notch fa-spin"></i></span>}
+        </button>
+  
+
+    </form>
+</section>

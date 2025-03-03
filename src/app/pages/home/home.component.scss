@@ -1,0 +1,10 @@
+.btn-main{
+    transform: translateY(150px);
+    transition: all 0.3s ease-in-out;
+}
+.product:hover .btn-main{
+    transform: translateY(0px);
+}
+.heart{
+ color: red;
+}
